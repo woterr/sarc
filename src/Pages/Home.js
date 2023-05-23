@@ -88,7 +88,7 @@ function Home() {
             <a href="https://twitter.com/SarcBZ">
               <i className="bx bxl-twitter"></i>
             </a>
-            <a href="https://discord.gg/raj">
+            <a href="https://discord.com/users/261816312462835712">
               <i className="bx bxl-discord-alt"></i>
             </a>
             <a href="https://www.instagram.com/sarc/">
