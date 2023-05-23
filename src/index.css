@@ -1,13 +1,456 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800&display=swap");
+
+:root {
+  --header-height: 8rem;
+  /*========== Colors ==========*/
+  --primary-color: #1f2937;
+  --title-color: #fafafa;
+  --text-color: #949ba6;
+  --text-color-light: #d4d4d4;
+  --body-color: #000000;
+  --container-color: #24262d;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Inter", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --big-font-size: 1.2rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes ==========*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 105;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body.light {
+  --title-color: #000000;
+  --text-color: #4b5563;
+  --text-color-light: #414955;
+  --body-color: #ffffff;
+  --container-color: #e6e6e6;
+  transition: all 0.2s ease-in-out;
+}
+
+.light .nav__logo {
+  -webkit-filter: brightness(0) grayscale(1) invert(0);
+  filter: brightness(0) grayscale(1) invert(0);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 2rem;
+    --biggest-font-size: 7rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 968px) {
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 0.15rem;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: var(--header-height); */
+  background: none;
+  z-index: var(--z-fixed);
+  color: var(--title-color);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 2rem; */
+}
+
+.nav-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__item a,
+.nav__logo a {
+  color: var(--title-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__item a:hover,
+.nav__logo a:hover {
+  color: var(--text-color);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.nav__logo img {
+  width: 1.75rem;
+  transition: all 0.3s;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: brightness(0) grayscale(1) invert(1);
+  margin-top: 0.45rem;
+  pointer-events: none;
+}
+
+.nav__logo img:hover {
+  opacity: 0.9;
+  transition: all 0.3s;
+}
+
+.theme__toggle {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--container-color);
+  color: var(--title-color);
+  font-size: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.theme__toggle:hover {
+  opacity: 0.9;
+  transition: all 0.3s;
+}
+
+.container.home {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-size: var(--big-font-size);
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.description {
+  max-width: 24rem;
+  line-height: 1.75rem;
+}
+
+.description span {
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 3.75rem;
+}
+
+.socials a {
+  color: var(--title-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.socials a:hover {
+  background-color: var(--container-color);
+}
+
+.time {
+  margin-top: 2rem;
+}
+
+.weather {
+  margin-top: 0.5rem;
+}
+
+.time,
+.weather {
+  font-weight: 400;
+  color: var(--title-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time i,
+.weather i {
+  font-size: 1.25rem;
+}
+
+.c-f,
+.w-l {
+  font-weight: 700;
+}
+
+.w-i {
+  font-size: var(--smaller-font-size);
+}
+
+/* projects  */
+
+.items.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.item {
+  text-align: left;
+  padding: 1.5rem;
+  max-width: 42rem;
+  text-decoration: none;
+  border: var(--primary-color) 1px solid;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.item {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.item:hover {
+  transform: scale(1.025);
+  transition: all 0.3s ease-in-out;
+}
+
+.item-title {
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+}
+
+/* contact */
+
+.half {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: 45%;
+}
+
+.input__label {
+  display: block;
+  font-size: var(--normal-font-size);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  border: 2px solid var(--primary-color);
+  outline: none;
+  background: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  width: 100%;
+}
+
+.full {
+  margin-bottom: 2rem;
+}
+
+textarea.input {
+  width: 100%;
+  height: 7.5rem;
+  font-style: var(--normal-font-size);
+  font-family: var(--body-font);
+  resize: vertical;
+}
+
+.action input,
+button.action {
+  background: none;
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  font-family: var(--body-font);
+  border: 2px solid #111111;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.action input:hover,
+button.action:hover {
+  background: #111111;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.conditional {
+  margin-top: 2rem;
+}
+
+.conditional div {
+  padding: 1.5rem 2rem;
+  width: 100%;
+  color: var(--title-color);
+  display: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.success {
+  background: #35d47d;
+}
+
+.error {
+  background: #ff5454;
+}
+
+.item__image img {
+  width: 5rem;
+  height: auto;
+  /* -webkit-filter: brightness(1) grayscale(1) invert(0);
+  filter: brightness(1) grayscale(1) invert(0); */
+}
+
+.item-title {
+  margin-bottom: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 999px) {
+  .half {
+    flex-direction: column;
+  }
+  .input__item {
+    width: 90%;
+  }
+
+  textarea.input {
+    width: 90%;
+  }
+
+  .action input,
+  button.action {
+    display: flex;
+    width: 95%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .container.home {
+    flex-direction: row;
+    align-items: auto;
+  }
+
+  .items.grid {
+    /* display: flex;
+    flex-direction: column; */
+    gap: 1rem;
+  }
+
+  .item {
+    margin-bottom: 1rem;
+  }
+
+  .item-title {
+    margin-bottom: 0;
+  }
+
+  .socials {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}
+
+.heading-err {
+  font-size: var(--biggest-font-size);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  /* letter-spacing: 10px; */
+}
+.hide {
+  display: none;
 }
