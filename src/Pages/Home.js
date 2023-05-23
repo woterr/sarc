@@ -51,7 +51,7 @@ function Home() {
           >
             <h1 className="heading">raj</h1>
             <p className="description">
-              16-year-old <span>community manager</span> and community builder
+              17-year-old <span>community manager</span> and community builder
               from California
             </p>
             <div className="time">
