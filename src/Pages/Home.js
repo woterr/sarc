@@ -69,10 +69,7 @@ function Home() {
               <i className="bx bx-cloud"></i>
               <span className="weather-t">
                 It is currently
-                <span className="c-f">
-                  {" "}
-                  {weatherData[2]} - ({weatherData[3]})
-                </span>
+                <span className="c-f"> {weatherData[2]}</span>
                 <span className="w-i"> ({weatherData[1]})</span> in
                 <span className="w-l"> {weatherData[0]}</span>
               </span>
