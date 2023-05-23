@@ -1,7 +1,6 @@
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Projects from "./Pages/Projects";
-import AdminDashboard from "./Pages/AdminDashboard";
 import Info from "./Pages/Info";
 import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -16,7 +15,6 @@ export function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/projects" element={<Projects />} />
-      <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/contact" element={<Contact />} />
       <Route
         path="/sent"
