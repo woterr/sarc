@@ -85,7 +85,7 @@ function Home() {
             data-aos-duration="800"
             data-aos-delay="600"
           >
-            <a href="https://twitter.com/SarcBZ">
+            <a href="https://twitter.com/sarrcc">
               <i className="bx bxl-twitter"></i>
             </a>
             <a href="https://discord.com/users/261816312462835712">
