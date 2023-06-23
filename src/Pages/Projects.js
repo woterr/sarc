@@ -6,7 +6,7 @@ function Projects() {
 
   async function getprojects() {
     await axios
-      .get("https://entertaining-lovely-sesame.glitch.me/projects")
+      .get("https://sarc-backend-7m71v47ox-sarcc.vercel.app/projects")
       .then((response) => {
         const projects = response.data;
         console.log(projects);
