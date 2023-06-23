@@ -12,7 +12,7 @@ function Contact() {
     e.preventDefault();
     navigate("/sent");
     await axios
-      .post("https://entertaining-lovely-sesame.glitch.me/contact", {
+      .post("https://sarc-backend-7m71v47ox-sarcc.vercel.app/contact", {
         name: name,
         email: email,
         message: message,
