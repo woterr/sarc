@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom";
 function Info({ title, description }) {
   return (
     <>
