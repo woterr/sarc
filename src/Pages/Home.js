@@ -99,6 +99,7 @@ function Home() {
             <a href=" https://www.twitch.tv/raaj">
               <svg
                 fill="#ffffff"
+                className="svgicon"
                 viewBox="0 0 256 256"
                 id="Flat"
                 xmlns="http://www.w3.org/2000/svg"
