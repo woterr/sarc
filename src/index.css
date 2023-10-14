@@ -229,7 +229,7 @@ h3 {
 }
 
 .svgicon{
-  fill: red;
+  fill: var(--title-color);
 }
 
 
