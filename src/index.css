@@ -216,8 +216,9 @@ h3 {
   font-size: 3.75rem;
 }
 
-.socials a {
+.socials a, .socials svg{
   color: var(--title-color);
+  fill: var(--title-color);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   font-size: 1rem;
