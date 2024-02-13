@@ -216,7 +216,7 @@ h3 {
   font-size: 3.75rem;
 }
 
-.socials a{ 
+.socials a {
   color: var(--title-color);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -228,14 +228,17 @@ h3 {
   justify-content: center;
 }
 
-.svgicon{
-  fill: var(--title-color);
-  color: var(--title-color);
-  transition: all 0.3s ease-in-out;
-  width: max-content !Important;
-  font-size: 1rem;
+.twitch_icon {
+  width: 1rem;
+  transition: all 0.3s;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: brightness(0) grayscale(1) invert(1);
 }
 
+.light .twitch_icon {
+  -webkit-filter: brightness(0) grayscale(1) invert(0);
+  filter: brightness(0) grayscale(1) invert(0);
+}
 
 .socials a:hover {
   background-color: var(--container-color);
