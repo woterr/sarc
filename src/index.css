@@ -233,7 +233,7 @@ h3 {
   color: var(--title-color);
   transition: all 0.3s ease-in-out;
   width: max-content !Important;
-  
+  font-size: 1rem;
 }
 
 
