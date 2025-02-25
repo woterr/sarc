@@ -15,7 +15,7 @@ function Home() {
     year: "numeric",
   });
   
-  var dob = new Date("02/24/2006");
+  var dob = new Date("02/18/2006");
   var month_diff = Date.now() - dob.getTime();
   var age_dt = new Date(month_diff);
   var year = age_dt.getUTCFullYear(); 
