@@ -14,12 +14,21 @@ function Home() {
     day: "numeric",
     year: "numeric",
   });
+  
+  var dob = new Date("02/24/2006");
+  var month_diff = Date.now() - dob.getTime();
+  var age_dt = new Date(month_diff);
+  var year = age_dt.getUTCFullYear(); 
+  var age = Math.abs(year - 1970);
+  
 
+  
   const [currentTime, setCurrentTime] = useState(time);
   const updateTime = () => {
     let time = new Date().toLocaleTimeString("en-US", {
       timeZone: "America/Los_Angeles",
     });
+    
     setCurrentTime(time);
   };
   setInterval(updateTime, 1000);
@@ -54,7 +63,7 @@ function Home() {
           >
             <h1 className="heading">raj</h1>
             <p className="description">
-              19-year-old <span>community manager</span> and community builder
+              {age}-year-old <span>community manager</span> and community builder
               from California
             </p>
             <div className="time">
